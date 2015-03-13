@@ -1,0 +1,8 @@
+td { colspan = 5 }
+  = form_for shipment, url: admin_shipment_notes_path, method: :post, remote: true, html: { id: 'internal-notes-form' } do |f|
+    = f.hidden_field :shipment_id, value: shipment.id
+    = f.label :notes, 'Internal Notes'
+    br
+    = f.text_area :notes, rows: 4, style: 'width: 100%;'
+td.actions
+  = link_to '', '#', class: 'save-shipment-notes fa fa-ok no-text with-tip', remote: true, onclick: '$(this).closest("tr").find("form").submit();'

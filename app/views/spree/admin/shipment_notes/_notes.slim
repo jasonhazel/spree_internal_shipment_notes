@@ -1,0 +1,6 @@
+table.internal-notes.index{ id = shipment.id }
+  tr.show-internal-form
+    = render partial: 'spree/admin/shipment_notes/form', locals: { shipment: shipment }
+  = render partial: 'spree/admin/shipment_notes/note', as: :note, collection: shipment.notes.reverse
+
+    

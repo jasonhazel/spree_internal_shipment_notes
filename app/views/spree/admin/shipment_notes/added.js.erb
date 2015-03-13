@@ -1,0 +1,8 @@
+console.log('loaded added.js.erb');
+table = $('table#<%= @shipment.id %>');
+notes = table.find('tr.show-internal-note');
+notes.remove();
+table.find('#shipment_notes').val('');
+table.append("<%= escape_javascript(render partial: 'spree/admin/shipment_notes/note', as: :note, collection: @shipment.notes.reverse) %>");
+
+$('#progress').hide();
